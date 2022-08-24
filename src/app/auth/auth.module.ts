@@ -10,8 +10,11 @@ import { EmailVerificationComponent } from './email-verification/email-verificat
 import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import { SkeletonModule } from "primeng/skeleton";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
+import {CheckboxModule} from 'primeng/checkbox';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputNumberModule} from 'primeng/inputnumber';
 
 
 @NgModule({
@@ -29,7 +32,11 @@ import {ButtonModule} from 'primeng/button';
     InputTextModule,
     SkeletonModule,
     FormsModule,
-    ButtonModule
+    ButtonModule,
+    CheckboxModule,
+    RadioButtonModule,
+    ReactiveFormsModule,
+    InputNumberModule
   ]
 })
 export class AuthModule { }

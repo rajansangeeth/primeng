@@ -1,1 +1,22 @@
-<p>navbar works!</p>
+<p-menubar>
+  <ng-template pTemplate="start">
+      <!-- <img src="assets/showcase/images/primeng.svg" height="40" class="mr-2"> -->
+      <p class="text-2xl">Dashboard</p>
+  </ng-template>
+  <ng-template pTemplate="end">
+      <!-- <input type="text" pInputText placeholder="Search"> -->
+      <i class="pi pi-user" style="font-size: 1.25rem" (click)="op.toggle($event)"><i class="pi pi-chevron-down"></i></i>
+      
+  </ng-template>
+</p-menubar>
+
+<p-overlayPanel #op>
+  <ng-template pTemplate>
+    <p-avatar pBadge value="4" severity="danger" size="xlarge" label="P" shape="circle"></p-avatar>
+    <ul class="overlay-list">
+      <li> <i class="pi pi-user-edit"></i> Profile edit </li>
+      <li> <i class="pi pi-cog"></i> Settings</li>
+      <li> <i class="pi pi-sign-out"></i> Log out </li>
+    </ul>
+  </ng-template>
+</p-overlayPanel>

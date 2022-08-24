@@ -1,35 +1,90 @@
-<div class="container">
-  <div class="flex justify-content-center align-items-center min-h-screen">
-    <p-card header="Login" [style]="{'width': '25rem', 'margin-bottom': '2em'}">
-      <div class="p-fluid grid">
-        <div class="field col-12 md:col-4">
-          <span class="p-float-label">
-            <input type="text" name="email" #email="ngModel" email="true" id="inputtext" pInputText [(ngModel)]="model.email" required> 
-            <label for="inputtext">Email</label>
-          </span>
-          <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
-            <div *ngIf="email.errors?.['required']">
-              Email is required.
-            </div>            
-          </div>
-        </div>
+<form [formGroup]="form">
 
+  <div class="grid p-fluid p-4">
+      
+    <div class="field col-12 md:col-3">
+      <span class="p-float-label">
+        <p-inputNumber id="index-input" formControlName="index"></p-inputNumber>
+          <label for="index-input">Index</label>
+      </span>
+    </div>
+
+    <div class="field col-12 md:col-3">
+      <span class="p-float-label">
+          <input type="text" id="name-input" pInputText formControlName="name"> 
+          <label for="name-input">Name</label>
+      </span>
+    </div>
+
+    <div class="field col-12 md:col-3">
+      <span class="p-float-label">
+          <input type="text" id="gender-input" pInputText formControlName="gender"> 
+          <label for="gender-input">Gender</label>
+      </span>
+    </div>
+
+    <div class="field col-12 md:col-3">
+      <span class="p-float-label">
+          <input type="text" id="eyecolor-input" pInputText formControlName="eyeColor"> 
+          <label for="eyecolor-input">Eyecolor</label>
+      </span>
+    </div>
+
+    <div class="field col-12 md:col-3">
+      <span class="p-float-label">
+          <input type="text" id="fruit-input" pInputText formControlName="favoriteFruit"> 
+          <label for="fruit-input">Favourite Fruit</label>
+      </span>
+    </div>
+
+    
+    <div formGroupName="company" class="md:col-9">
+      <div class="grid p-fluid">
         <div class="field col-12 md:col-4">
           <span class="p-float-label">
-            <input type="text" id="inputtext" name="password" #password="ngModel" pInputText [(ngModel)]="model.password" required> 
-            <label for="inputtext">Password</label>
+              <input type="text" id="title-input" pInputText formControlName="title"> 
+              <label for="title-input">Title</label>
           </span>
-          <div class="error" *ngIf="password.invalid && (password.dirty || password.touched)">
-            <div *ngIf="password.errors?.['required']">
-              Password is required.
-            </div>            
-          </div>
         </div>
-        
-        <button pButton type="button" label="Primary" class="p-button-outlined p-button-rounded p-button-raised mx-2"></button>
+    
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+              <input type="text" id="email-input" [email]="true" pInputText formControlName="email"> 
+              <label for="email-input">Email</label>
+          </span>
+        </div>
+    
+    
+        <div class="field col-12 md:col-4">
+          <span class="p-float-label">
+              <input type="text" id="phone-input" pInputText formControlName="phone"> 
+              <label for="phone-input">Phone</label>
+          </span>
+        </div>
       </div>
-    </p-card>
+
+      <div formGroupName="location">
+        
+        <div class="grid">
+          <div class="field md:col-6 ">
+            <span class="p-float-label">
+                <input type="text" id="country-input" pInputText formControlName="country"> 
+                <label for="country-input">Country</label>
+            </span>
+          </div>
+  
+          <div class="field md:col-6 ">
+            <span class="p-float-label">
+                <input type="text" id="address-input" pInputText formControlName="address"> 
+                <label for="address-input">Address</label>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
   </div>
-</div>
-
-
+  
+</form>

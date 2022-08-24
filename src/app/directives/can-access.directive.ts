@@ -1,20 +1,20 @@
 import { Directive, TemplateRef, ViewContainerRef } from "@angular/core";
 
 @Directive({
-  selector: '[appCanAccess]'
+  selector: '[canAccess]'
 })
 
 export class CanAccessDirective {
-  accessCode: any[] = []
-  constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef) {
-    this.accessCode = JSON.parse(localStorage.getItem('accessCode') || '')
+  accessRights: any = JSON.parse(localStorage.getItem("canAccess") || '') ?? []
+  constructor(private template: TemplateRef<any>, private viewContainer: ViewContainerRef) {
+
   }
 
-  appCanAccess(code: string) {
-    if (this.accessCode.includes(code)) {
-      return true
+  canAccess(code: string) {
+    if (this.accessRights.includes(code)) {
+      this.viewContainer.createEmbeddedView(this.template);
     } else {
-      return false
+      this.viewContainer.clear();
     }
   }
 }

@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PagesComponent } from './pages.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: PagesComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
